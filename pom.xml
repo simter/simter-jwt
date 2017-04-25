@@ -4,16 +4,14 @@
   <parent>
     <groupId>tech.simter</groupId>
     <artifactId>simter-parent</artifactId>
-    <version>0.2.0</version>
+    <version>0.3-SNAPSHOT</version>
+    <relativePath/>
   </parent>
   <artifactId>simter-jwt</artifactId>
-  <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-
   <name>simter-jwt</name>
   <description>Pure Java implementation for JSON Web Token (JWT)</description>
   <url>https://github.com/simter/simter-jwt</url>
-
   <licenses>
     <license>
       <name>MIT</name>
@@ -21,11 +19,9 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <scm>
     <url>https://github.com/simter/simter-jwt.git</url>
   </scm>
-
   <organization>
     <name>simter</name>
     <url>https://github.com/simter</url>
@@ -40,13 +36,11 @@
     <system>GitHub</system>
     <url>https://github.com/simter/simter-jwt/issues</url>
   </issueManagement>
-
   <dependencies>
     <dependency>
       <groupId>javax.json</groupId>
       <artifactId>javax.json-api</artifactId>
     </dependency>
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
