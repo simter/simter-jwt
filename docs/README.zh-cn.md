@@ -8,7 +8,7 @@ JSON Web Token (JWT) [[RFC7519]] 的纯 Java 实现。
 <dependency>
   <groupId>tech.simter</groupId>
   <artifactId>simter-jwt</artifactId>
-  <version>0.1.0</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
@@ -85,9 +85,9 @@ mvn clean deploy -Psonatype
 mvn clean deploy -Pbintray
 ```
 
-发布之前要先在 Bintray 创建 package `https://bintray.com/simter/maven-repo/simter-jwt`。
-发布到的地址为 `https://api.bintray.com/maven/simter/maven-repo/simter-jwt/;publish=1`。
-发布成功后可以到 <https://simter.bintray.com/maven-repo/tech/simter/simter-jwt> 检查一下结果。
+发布之前要先在 Bintray 创建 package `https://bintray.com/simter/maven/tech.simter:simter-jwt`。
+发布到的地址为 `https://api.bintray.com/maven/simter/maven/tech.simter:simter-jwt/;publish=1`。
+发布成功后可以到 <https://jcenter.bintray.com/tech/simter/simter-jwt> 检查一下结果。
 
 ## 参考
 
