@@ -4,10 +4,11 @@
   <parent>
     <groupId>tech.simter</groupId>
     <artifactId>simter-parent</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3.0</version>
     <relativePath/>
   </parent>
   <artifactId>simter-jwt</artifactId>
+  <version>0.3.0</version>
   <packaging>jar</packaging>
   <name>simter-jwt</name>
   <description>Pure Java implementation for JSON Web Token (JWT)</description>
