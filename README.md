@@ -8,7 +8,7 @@ Pure Java implementation for JSON Web Token (JWT) [[RFC7519]]
 <dependency>
   <groupId>tech.simter</groupId>
   <artifactId>simter-jwt</artifactId>
-  <version>0.3.0</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 

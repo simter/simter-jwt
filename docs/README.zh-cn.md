@@ -8,7 +8,7 @@ JSON Web Token (JWT) [[RFC7519]] 的纯 Java 实现。
 <dependency>
   <groupId>tech.simter</groupId>
   <artifactId>simter-jwt</artifactId>
-  <version>0.3.0</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
