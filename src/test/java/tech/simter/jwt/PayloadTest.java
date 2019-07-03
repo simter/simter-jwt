@@ -1,16 +1,16 @@
 package tech.simter.jwt;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author RJ
  */
-public class PayloadTest {
+class PayloadTest {
   // isa=2016-01-01, exp=2017-01-01, nbf=2016-06-01
   // {"iss":"RJ","sub":"test","aud":"you","exp":1483200000,"nbf":1464710400,"iat":1451577600,"jti":"ID"}
   private String PAYLOAD_FULL = "eyJpc3MiOiJSSiIsInN1YiI6InRlc3QiLCJhdWQiOiJ5b3UiLCJleHAiOjE0ODMyMDAwMDAs" +
@@ -21,7 +21,7 @@ public class PayloadTest {
   private String PAYLOAD_PUBLIC = "eyJwdWJsaWNDbGFpbSI6InRlc3QifQ==";
 
   @Test
-  public void encode_FULL() {
+  void encode_FULL() {
     Payload payload = new Payload();
     payload.jwtId = "ID";
     payload.issuer = "RJ";
@@ -34,20 +34,20 @@ public class PayloadTest {
   }
 
   @Test
-  public void encode_EMPTY() {
+  void encode_EMPTY() {
     Payload payload = new Payload();
     assertEquals(PAYLOAD_EMPTY, payload.encode());
   }
 
   @Test
-  public void encode_PUBLIC() {
+  void encode_PUBLIC() {
     Payload payload = new Payload();
     payload.add("publicClaim", "test");
     assertEquals(PAYLOAD_PUBLIC, payload.encode());
   }
 
   @Test
-  public void decode_FULL() {
+  void decode_FULL() {
     Payload payload = Payload.decode(PAYLOAD_FULL);
     assertEquals("RJ", payload.issuer);
     assertEquals("test", payload.subject);
@@ -60,7 +60,7 @@ public class PayloadTest {
   }
 
   @Test
-  public void decode_EMPTY() {
+  void decode_EMPTY() {
     Payload payload = Payload.decode(PAYLOAD_EMPTY);
     assertNull(payload.issuer);
     assertNull(payload.subject);
@@ -73,7 +73,7 @@ public class PayloadTest {
   }
 
   @Test
-  public void decode_PUBLIC() {
+  void decode_PUBLIC() {
     Payload payload = Payload.decode(PAYLOAD_PUBLIC);
     assertNull(payload.issuer);
     assertNull(payload.subject);

@@ -1,22 +1,22 @@
 package tech.simter.jwt.signer;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import tech.simter.jwt.Algorithm;
 import tech.simter.jwt.Signer;
 import tech.simter.jwt.SignerFactory;
 
 import java.nio.charset.StandardCharsets;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author RJ
  */
-public class NONETest {
-  static Signer signer = SignerFactory.get(Algorithm.NONE);
+class NONETest {
+  private static Signer signer = SignerFactory.get(Algorithm.NONE);
 
   @Test
-  public void sign_EMPTY() {
+  void sign_EMPTY() {
     // header={}, payload={}
     byte[] data = "e30=.e30=".getBytes(StandardCharsets.UTF_8);
     byte[] key = "test".getBytes(StandardCharsets.UTF_8);

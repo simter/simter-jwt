@@ -1,6 +1,6 @@
 package tech.simter.jwt.signer;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import tech.simter.jwt.Algorithm;
 import tech.simter.jwt.Signer;
 import tech.simter.jwt.SignerFactory;
@@ -10,16 +10,16 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author RJ
  */
-public class HS256Test {
-  static Signer signer = SignerFactory.get(Algorithm.HS256);
+class HS256Test {
+  private static Signer signer = SignerFactory.get(Algorithm.HS256);
 
   @Test
-  public void sign_EMPTY() {
+  void sign_EMPTY() {
     // header={}, payload={}
     byte[] data = "e30=.e30=".getBytes(StandardCharsets.UTF_8);
     byte[] key = "test".getBytes(StandardCharsets.UTF_8);
@@ -28,14 +28,14 @@ public class HS256Test {
   }
 
   @Test
-  public void string2sha256() throws NoSuchAlgorithmException {
+  void string2sha256() throws NoSuchAlgorithmException {
     String text = "simter-demo";
     MessageDigest digest = MessageDigest.getInstance("SHA-256");
     Charset utf8 = StandardCharsets.UTF_8;
     byte[] hash = digest.digest(text.getBytes(utf8));
 
     // byte to hex
-    System.out.println(bytesToHex(hash).toUpperCase());
+    assertEquals("0D4F59F451CB6DD0B7E99AFFB4BE3681D89C4E32EF00F81AA80DC51484E1D7E7", bytesToHex(hash).toUpperCase());
   }
 
   private static String bytesToHex(byte[] bytes) {

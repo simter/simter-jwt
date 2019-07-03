@@ -1,18 +1,18 @@
 package tech.simter.jwt;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author RJ
  */
-public class JWTTest {
-  String SECRET_TEST = "secret";
+class JWTTest {
+  private String SECRET_TEST = "secret";
   // {"typ":"JWT","alg":"HS256"}
   private String HEADER_ONE = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9";
 
@@ -25,7 +25,7 @@ public class JWTTest {
   private String SIGNATURE_ONE = "GfIxwOp-DuyZ3A0bkgd7KgjeYIZPskZOTEFmYEguIv8=";
 
   @Test
-  public void encode_ONE() {
+  void encode_ONE() {
     Header header = new Header(Header.DEFAULT_TYPE, Algorithm.HS256);
 
     Payload payload = new Payload();
@@ -45,7 +45,7 @@ public class JWTTest {
   }
 
   @Test
-  public void encode_UNSEURED() {
+  void encode_UNSEURED() {
     // {"alg":"NONE"} eyJhbGciOiJOT05FIn0=
     Header header = new Header(Algorithm.NONE);
     // {} e30=
@@ -58,7 +58,7 @@ public class JWTTest {
   }
 
   @Test
-  public void decode_ONE() {
+  void decode_ONE() {
     JWT jwt = JWT.verify(HEADER_ONE + "." + PAYLOAD_ONE + "." + SIGNATURE_ONE, SECRET_TEST);
     assertEquals(HEADER_ONE, jwt.header.encode());
     assertEquals(PAYLOAD_ONE, jwt.payload.encode());
