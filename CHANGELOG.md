@@ -1,5 +1,9 @@
 # simter-jwt changelog
 
+## 3.0.0-M1 - 2021-04-27
+
+- Upgrade to simter-dependencies-3.0.0-M2
+
 ## 2.0.0 - 2020-11-19
 
 - Upgrade to simter-dependencies-2.0.0
