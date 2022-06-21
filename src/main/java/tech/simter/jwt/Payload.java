@@ -119,29 +119,14 @@ public final class Payload extends Base {
     Payload payload = new Payload();
     json.keySet().forEach(key -> {
       switch (key) {
-        case "iss":
-          payload.issuer = json.getString(key);
-          break;
-        case "sub":
-          payload.subject = json.getString(key);
-          break;
-        case "aud":
-          payload.audience = json.getString(key);
-          break;
-        case "exp":
-          payload.expires = new Long(json.get(key).toString());
-          break;
-        case "nbf":
-          payload.notBefore = new Long(json.get(key).toString());
-          break;
-        case "iat":
-          payload.issuedAt = new Long(json.get(key).toString());
-          break;
-        case "jti":
-          payload.jwtId = json.getString(key);
-          break;
-        default:
-          payload.add(key, json.getString(key));
+        case "iss" -> payload.issuer = json.getString(key);
+        case "sub" -> payload.subject = json.getString(key);
+        case "aud" -> payload.audience = json.getString(key);
+        case "exp" -> payload.expires = Long.valueOf(json.get(key).toString());
+        case "nbf" -> payload.notBefore = Long.valueOf(json.get(key).toString());
+        case "iat" -> payload.issuedAt = Long.valueOf(json.get(key).toString());
+        case "jti" -> payload.jwtId = json.getString(key);
+        default -> payload.add(key, json.getString(key));
       }
     });
     return payload;
